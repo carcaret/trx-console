@@ -1,0 +1,42 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.safelayer.com/TWS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TxStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GlobalStats">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="StartAt"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Service" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType mixed="true">
+            <xs:sequence>
+              <xs:element type="xs:short" name="SuccessClientAvg"/>
+              <xs:element type="xs:byte" name="SuccessClientMin"/>
+              <xs:element type="xs:short" name="SuccessClientMax"/>
+              <xs:element type="xs:short" name="SuccessServerAvg"/>
+              <xs:element type="xs:byte" name="SuccessServerMin"/>
+              <xs:element type="xs:short" name="SuccessServerMax"/>
+              <xs:element type="xs:short" name="SuccessCounter"/>
+              <xs:element type="xs:short" name="RequesterErrorCounter"/>
+              <xs:element type="xs:byte" name="ResponderErrorCounter"/>
+              <xs:element name="LastRequest" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Success"/>
+                    <xs:element type="xs:string" name="FinishTime"/>
+                    <xs:element type="xs:string" name="Result"/>
+                    <xs:element type="xs:short" name="ClientProcessingTime"/>
+                    <xs:element type="xs:short" name="ServerProcessingTime"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
