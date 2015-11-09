@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <css:TxStatistics xmlns:css="http://www.safelayer.com/TWS">
   <css:GlobalStats>
     <css:StartAt>20151022120009.335Z</css:StartAt>
   </css:GlobalStats>
-  <css:Service name="urn:safelayer:tws:services:ds"> firma
+  <css:Service name="urn:safelayer:tws:services:ds"> <!--firma-->
     <css:SuccessClientAvg>51</css:SuccessClientAvg>
     <css:SuccessClientMin>47</css:SuccessClientMin>
     <css:SuccessClientMax>11677</css:SuccessClientMax>
@@ -20,7 +21,7 @@
       <css:ServerProcessingTime>40</css:ServerProcessingTime>
     </css:LastRequest>
   </css:Service>
-  <css:Service name="urn:safelayer:tws:services:dsv"> verificacion
+  <css:Service name="urn:safelayer:tws:services:dsv"> <!--verificacion-->
     <css:SuccessClientAvg>239</css:SuccessClientAvg>
     <css:SuccessClientMin>68</css:SuccessClientMin>
     <css:SuccessClientMax>18957</css:SuccessClientMax>
@@ -38,7 +39,7 @@
       <css:ServerProcessingTime>178</css:ServerProcessingTime>
     </css:LastRequest>
   </css:Service>
-  <css:Service name="urn:safelayer:tws:services:dr"> actualización de firma
+  <css:Service name="urn:safelayer:tws:services:dr"> <!--actualización de firma-->
     <css:SuccessClientAvg>0</css:SuccessClientAvg>
     <css:SuccessClientMin>0</css:SuccessClientMin>
     <css:SuccessClientMax>0</css:SuccessClientMax>
