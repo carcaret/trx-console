@@ -9,7 +9,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>windows-1252</project.build.sourceEncoding>
-		<java.version>1.6</java.version>
+		<java.version>1.7</java.version>
+		<jetty.version>8.1.18.v20150929</jetty.version>
 		<cfg.entorno>de</cfg.entorno>
 		<cfg.cloneId>10</cfg.cloneId>
 	</properties>
@@ -25,6 +26,12 @@
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 			<version>2.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jetty.aggregate</groupId>
+			<artifactId>jetty-all-server</artifactId>
+			<version>${jetty.version}</version>
 		</dependency>
 
 		<dependency>
