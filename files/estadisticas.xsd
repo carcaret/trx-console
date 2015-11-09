@@ -10,25 +10,25 @@
           </xs:complexType>
         </xs:element>
         <xs:element name="Service" maxOccurs="unbounded" minOccurs="0">
-          <xs:complexType mixed="true">
+          <xs:complexType>
             <xs:sequence>
-              <xs:element type="xs:short" name="SuccessClientAvg"/>
-              <xs:element type="xs:byte" name="SuccessClientMin"/>
-              <xs:element type="xs:short" name="SuccessClientMax"/>
-              <xs:element type="xs:short" name="SuccessServerAvg"/>
-              <xs:element type="xs:byte" name="SuccessServerMin"/>
-              <xs:element type="xs:short" name="SuccessServerMax"/>
-              <xs:element type="xs:short" name="SuccessCounter"/>
-              <xs:element type="xs:short" name="RequesterErrorCounter"/>
-              <xs:element type="xs:byte" name="ResponderErrorCounter"/>
+              <xs:element type="xs:int" name="SuccessClientAvg"/>
+              <xs:element type="xs:int" name="SuccessClientMin"/>
+              <xs:element type="xs:int" name="SuccessClientMax"/>
+              <xs:element type="xs:int" name="SuccessServerAvg"/>
+              <xs:element type="xs:int" name="SuccessServerMin"/>
+              <xs:element type="xs:int" name="SuccessServerMax"/>
+              <xs:element type="xs:int" name="SuccessCounter"/>
+              <xs:element type="xs:int" name="RequesterErrorCounter"/>
+              <xs:element type="xs:int" name="ResponderErrorCounter"/>
               <xs:element name="LastRequest" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="Success"/>
+                    <xs:element type="xs:boolean" name="Success"/>
                     <xs:element type="xs:string" name="FinishTime"/>
                     <xs:element type="xs:string" name="Result"/>
-                    <xs:element type="xs:short" name="ClientProcessingTime"/>
-                    <xs:element type="xs:short" name="ServerProcessingTime"/>
+                    <xs:element type="xs:int" name="ClientProcessingTime"/>
+                    <xs:element type="xs:int" name="ServerProcessingTime"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>

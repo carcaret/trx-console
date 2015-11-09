@@ -1,4 +1,4 @@
-package com.carcaet.trx.console.jaxb.engine;
+package com.carcaret.trx.console.jaxb.engine;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import com.carcaret.trx.console.jaxb.TxStatistics;
 import com.carcaret.trx.console.jaxb.TxStatistics.GlobalStats;
+import com.carcaret.trx.console.jaxb.engine.Marshaller;
 
 
 public class MarshallTest {
