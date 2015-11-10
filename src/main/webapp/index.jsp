@@ -27,6 +27,7 @@
 			<option selected="selected" value="urn:safelayer:tws:services:ds">Firma</option>
 			<option value="urn:safelayer:tws:services:dsv">Verificacion</option>
 		</select>
+		Fecha: <input type="text" id="date"/>
 		<button id="consulta">Consulta</button>
 		<div class="ct-chart ct-perfect-fourth" />
 	</body>

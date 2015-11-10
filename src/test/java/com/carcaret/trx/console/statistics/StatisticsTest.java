@@ -19,7 +19,7 @@ public class StatisticsTest {
   @Before
   public void init() throws FileNotFoundException, JAXBException, XMLStreamException {
     statistics =
-        new StatisticsImpl(Marshaller.unmarshall(new FileInputStream("files/estadisticas.xml")));
+        new StatisticsImpl(Marshaller.unmarshall(new FileInputStream("src/test/resources/estadisticas.xml")));
   }
 
   @Test

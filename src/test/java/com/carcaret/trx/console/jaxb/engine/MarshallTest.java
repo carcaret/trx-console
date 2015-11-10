@@ -14,7 +14,6 @@ import org.junit.Test;
 
 import com.carcaret.trx.console.jaxb.TxStatistics;
 import com.carcaret.trx.console.jaxb.TxStatistics.GlobalStats;
-import com.carcaret.trx.console.jaxb.engine.Marshaller;
 
 
 public class MarshallTest {
@@ -24,7 +23,7 @@ public class MarshallTest {
 
   @Before
   public void init() throws FileNotFoundException {
-    xml = new FileInputStream("files/estadisticas.xml");
+    xml = new FileInputStream("src/test/resources/estadisticas.xml");
     statistics = new TxStatistics();
     GlobalStats stats = new GlobalStats();
     stats.setStartAt("20151022120009.335Z");

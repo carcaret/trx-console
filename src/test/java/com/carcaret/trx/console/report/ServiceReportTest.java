@@ -23,7 +23,7 @@ public class ServiceReportTest {
 	@Before
 	public void init() throws FileNotFoundException, JAXBException{
 		TxStatistics txStatistics = Marshaller.unmarshall(new FileInputStream(
-				"files/estadisticas.xml"));
+				"src/test/resources/estadisticas.xml"));
 		statistics = new StatisticsImpl(txStatistics);
 	}
 	

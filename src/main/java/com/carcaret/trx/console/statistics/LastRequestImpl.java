@@ -1,10 +1,9 @@
 package com.carcaret.trx.console.statistics;
 
 import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import com.carcaret.trx.console.statistics.Service.LastRequest;
+import com.carcaret.trx.console.util.Date;
 
 class LastRequestImpl implements LastRequest {
 
@@ -18,8 +17,7 @@ class LastRequestImpl implements LastRequest {
       int clientProcessingTime, int serverProcessingTime) {
     super();
     this.success = success;
-    DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyyMMddHHmmss.SSSZ");
-    this.finishTime = formatter.parseDateTime(finishTime);
+    this.finishTime = Date.TRX_FORMATTER.parseDateTime(finishTime);
     this.result = result;
     this.clientProcessingTime = clientProcessingTime;
     this.serverProcessingTime = serverProcessingTime;
