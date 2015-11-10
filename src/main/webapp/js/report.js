@@ -1,6 +1,14 @@
 $(document).ready(function() {
+	$("button").button(function(event) {
+		event.preventDefault();
+	});
+
+	$("#reportType").selectmenu();
+	
+	$("#serviceType").selectmenu();
+	
 	$('#consulta').click(function(evento) {
-		$.get('/rest/report/service', function(data) {
+		$.get('/rest/report/service/' + $("#reportType").val() + "/" + $("#serviceType").val(), function(data) {
 			var charData = {
 				labels : data.labels,
 				series : data.series

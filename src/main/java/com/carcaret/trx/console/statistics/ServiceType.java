@@ -1,5 +1,6 @@
 package com.carcaret.trx.console.statistics;
 
+
 public enum ServiceType {
 
   FIRMA("urn:safelayer:tws:services:ds"), VERIFICACION(
@@ -17,4 +18,13 @@ public enum ServiceType {
     return uri;
   }
 
+	public static ServiceType getType(String type) {
+		for (ServiceType serviceType : values()) {
+			if (serviceType.getUri().equalsIgnoreCase(type)) {
+				return serviceType;
+			}
+		}
+		return ServiceType.FIRMA;
+	}
+  
 }

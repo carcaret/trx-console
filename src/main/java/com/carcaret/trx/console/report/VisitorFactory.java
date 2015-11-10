@@ -1,14 +1,14 @@
 package com.carcaret.trx.console.report;
 
-public final class ReportFactory {
+public final class VisitorFactory {
 
-	private ReportFactory(){
+	private VisitorFactory(){
 	}
 	
-	public static Report newInstance(ReportType type){
+	public static Visitor newInstance(ReportType type){
 		switch (type) {
-		case SERVICE:
-			return new ServiceReport();
+		case GENERAL:
+			return new GeneralReport();
 		default:
 			throw new IllegalArgumentException(String.format("ReportType '%s' not supported", type));
 		}

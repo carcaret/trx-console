@@ -1,7 +1,7 @@
 package com.carcaret.trx.console.statistics;
 
 import com.carcaret.trx.console.jaxb.TxStatistics;
-import com.carcaret.trx.console.report.Report;
+import com.carcaret.trx.console.report.Visitor;
 import com.carcaret.trx.console.statistics.Service.AggregateValues;
 import com.carcaret.trx.console.statistics.Service.ErrorCount;
 import com.carcaret.trx.console.statistics.Service.LastRequest;
@@ -44,8 +44,8 @@ public final class StatisticsImpl implements Statistics {
 	}
 
 	@Override
-	public void accept(Report report) {
-		report.visit(this);
+	public void accept(Visitor visitor) {
+		visitor.visit(this);
 	}
 
 }

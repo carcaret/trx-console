@@ -7,14 +7,18 @@ import com.carcaret.trx.console.statistics.Service;
 import com.carcaret.trx.console.statistics.ServiceType;
 import com.carcaret.trx.console.statistics.Statistics;
 
-final class ServiceReport implements Report {
+final class GeneralReport implements Visitor {
 
 	private Result result = new Result();
 
 	@Override
 	public void visit(Statistics statistics) {
 		Service service = statistics.getService(ServiceType.FIRMA);
-		
+		visit(service);
+	}
+
+	@Override
+	public void visit(Service service) {
 		Result.Series client = new Result.Series();
 		client.setName("Cliente");
 		client.setData(Arrays.asList(
@@ -37,5 +41,5 @@ final class ServiceReport implements Report {
 	public Result getResult() {
 		return result;
 	}
-
+	
 }

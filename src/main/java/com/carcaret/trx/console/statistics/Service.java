@@ -2,6 +2,8 @@ package com.carcaret.trx.console.statistics;
 
 import org.joda.time.DateTime;
 
+import com.carcaret.trx.console.report.Visitor;
+
 public interface Service {
 
   ServiceType getType();
@@ -13,6 +15,8 @@ public interface Service {
   ErrorCount getErrorCount();
 
   LastRequest getLastRequest();
+  
+  void accept(Visitor visitor);
 
   public interface AggregateValues {
     int avg();

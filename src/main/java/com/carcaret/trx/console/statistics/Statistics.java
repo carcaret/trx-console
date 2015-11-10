@@ -1,11 +1,11 @@
 package com.carcaret.trx.console.statistics;
 
-import com.carcaret.trx.console.report.Report;
+import com.carcaret.trx.console.report.Visitor;
 
 public interface Statistics {
 
   Service getService(ServiceType type);
   
-  void accept(Report report);
+  void accept(Visitor visitor);
 
 }
