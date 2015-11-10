@@ -11,7 +11,7 @@ import com.carcaret.trx.console.dto.Test;
 public class ReportService {
 
 	@GET
-	@Path("/getEmployee")
+	@Path("/test")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Test test() {
 		Test test = new Test();

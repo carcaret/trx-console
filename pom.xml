@@ -10,7 +10,7 @@
 	<properties>
 		<project.build.sourceEncoding>windows-1252</project.build.sourceEncoding>
 		<java.version>1.7</java.version>
-		<jetty.version>8.1.18.v20150929</jetty.version>
+		<jetty.version>9.2.11.v20150529</jetty.version>
 		<jersey.version>1.19</jersey.version>
 		<cfg.entorno>de</cfg.entorno>
 		<cfg.cloneId>10</cfg.cloneId>
@@ -23,18 +23,12 @@
 			<version>1.1.1</version>
 		</dependency>
 
-		<!-- <dependency> -->
-		<!-- <groupId>com.sun.jersey</groupId> -->
-		<!-- <artifactId>jersey-server</artifactId> -->
-		<!-- <version>${jersey.version}</version> -->
-		<!-- </dependency> -->
-
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-servlet</artifactId>
 			<version>${jersey.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-json</artifactId>
@@ -53,10 +47,43 @@
 			<version>2.9</version>
 		</dependency>
 
+		<!--Jetty dependencies start here -->
 		<dependency>
-			<groupId>org.eclipse.jetty.aggregate</groupId>
-			<artifactId>jetty-all-server</artifactId>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
 			<version>${jetty.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-annotations</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jsp</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+
+		<!--Jetty Apache JSP dependency -->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>apache-jsp</artifactId>
+			<version>${jetty.version}</version>
+		</dependency>
+
+		<!-- JSTL Dependency -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
 
 		<dependency>
@@ -76,33 +103,6 @@
 		<finalName>${project.artifactId}.${project.version}</finalName>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
-		<!-- <testResources> -->
-		<!-- <testResource> -->
-		<!-- <directory>src/test/resources</directory> -->
-		<!-- <includes> -->
-		<!-- <include>*.*</include> -->
-		<!-- </includes> -->
-		<!-- <excludes> -->
-		<!-- <exclude>.gitignore</exclude> -->
-		<!-- </excludes> -->
-		<!-- <filtering>true</filtering> -->
-		<!-- </testResource> -->
-		<!-- <testResource> -->
-		<!-- <directory>src/test/resources/cfg/entorno</directory> -->
-		<!-- <targetPath>cfg/entorno</targetPath> -->
-		<!-- <excludes> -->
-		<!-- <exclude>*.xml</exclude> -->
-		<!-- </excludes> -->
-		<!-- </testResource> -->
-		<!-- <testResource> -->
-		<!-- <directory>src/test/resources/cfg/entorno</directory> -->
-		<!-- <targetPath>cfg/entorno</targetPath> -->
-		<!-- <includes> -->
-		<!-- <include>*.xml</include> -->
-		<!-- </includes> -->
-		<!-- <filtering>true</filtering> -->
-		<!-- </testResource> -->
-		<!-- </testResources> -->
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
