@@ -15,5 +15,6 @@
 	<body>
 		<h2>Hello World!</h2>
 		<input type="button" id="consulta" value="Consulta" />
+		<div class="ct-chart ct-perfect-fourth" />
 	</body>
 </html>
