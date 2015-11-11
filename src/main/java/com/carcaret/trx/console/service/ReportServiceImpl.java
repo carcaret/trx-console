@@ -1,5 +1,7 @@
 package com.carcaret.trx.console.service;
 
+import java.util.List;
+
 import com.carcaret.trx.console.dto.Result;
 import com.carcaret.trx.console.jaxb.TxStatistics;
 import com.carcaret.trx.console.report.ReportType;
@@ -15,13 +17,16 @@ public final class ReportServiceImpl implements ReportService {
 	FileService fileService = new FileServiceImpl();
 	
 	@Override
-	public Result generate(ReportType reportType, ServiceType serviceType, String date) {
+	public Result generate(ReportType reportType, ServiceType serviceType, String date, int interval) {
 		try {
-			Visitor visitor = VisitorFactory.newInstance(reportType);
-			TxStatistics txStatistics = fileService.getStatistics(date);
-			Statistics statistics = new StatisticsImpl(txStatistics);
-			Service service = statistics.getService(serviceType);
-			service.accept(visitor);
+			Visitor visitor = VisitorFactory.newInstance(reportType, date, interval);
+			List<TxStatistics> txStatistics = fileService.getStatistics(date, interval);
+			Statistics statistics;
+			for(TxStatistics txStatistic : txStatistics){
+				statistics = new StatisticsImpl(txStatistic);
+				Service service = statistics.getService(serviceType);
+				service.accept(visitor);
+			}
 			return visitor.getResult();
 		} catch (Exception e) {
 			throw new RuntimeException(e);

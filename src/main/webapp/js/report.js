@@ -10,7 +10,13 @@ $(document).ready(function() {
 	$('#date').datepicker({ dateFormat: 'yymmdd' });
 	
 	$('#consulta').click(function(evento) {
-		var url = '/rest/report/service/' + $('#reportType').val() + '/' + $('#serviceType').val() + '/' + $('#date').val();
+		var url = '/rest/report/service/' + $('#reportType').val() + '/' + $('#serviceType').val();
+		if($('#date').val() != ''){
+			url += '/' + $('#date').val();
+			if($('#interval').val() != ''){
+				url += '/' + $('#interval').val();
+			}
+		}
 		$.get(url)
 			.done(function(data) {
 				var charData = {

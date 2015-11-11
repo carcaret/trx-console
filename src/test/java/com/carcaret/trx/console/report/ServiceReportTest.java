@@ -13,6 +13,7 @@ import org.junit.Test;
 import com.carcaret.trx.console.dto.Result;
 import com.carcaret.trx.console.jaxb.TxStatistics;
 import com.carcaret.trx.console.jaxb.engine.Marshaller;
+import com.carcaret.trx.console.statistics.ServiceType;
 import com.carcaret.trx.console.statistics.Statistics;
 import com.carcaret.trx.console.statistics.StatisticsImpl;
 
@@ -30,7 +31,7 @@ public class ServiceReportTest {
 	@Test
 	public void generateServiceReport(){
 		Visitor visitor = new GeneralReport();
-		visitor.visit(statistics);
+		visitor.visit(statistics.getService(ServiceType.FIRMA));
 		Result result = visitor.getResult();
 		Assert.assertEquals(Arrays.asList("Avg", "Min", "Max"), result.getLabels());
 	}

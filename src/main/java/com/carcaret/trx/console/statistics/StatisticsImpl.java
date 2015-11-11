@@ -1,7 +1,6 @@
 package com.carcaret.trx.console.statistics;
 
 import com.carcaret.trx.console.jaxb.TxStatistics;
-import com.carcaret.trx.console.report.Visitor;
 import com.carcaret.trx.console.statistics.Service.AggregateValues;
 import com.carcaret.trx.console.statistics.Service.ErrorCount;
 import com.carcaret.trx.console.statistics.Service.LastRequest;
@@ -35,17 +34,12 @@ public final class StatisticsImpl implements Statistics {
 						service.getLastRequest().getResult(),
 						service.getLastRequest().getClientProcessingTime(),
 						service.getLastRequest().getServerProcessingTime());
-				return new ServiceImpl(type, client, server, errors, last);
+				return new ServiceImpl(type, client, server, service.getSuccessCounter(), errors, last);
 			}
 		}
 		throw new IllegalArgumentException(String.format(
 				"Service type '%s' not found",
 				type.getUri()));
-	}
-
-	@Override
-	public void accept(Visitor visitor) {
-		visitor.visit(this);
 	}
 
 }

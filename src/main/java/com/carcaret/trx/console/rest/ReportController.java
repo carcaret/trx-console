@@ -28,7 +28,7 @@ public class ReportController {
 			return service.generate(
 					ReportType.getType(reportType),
 					ServiceType.getType(serviceType),
-					"");
+					"", 0);
 		} catch (Exception e) {
 			throw new ServerException(e);
 		}
@@ -43,7 +43,23 @@ public class ReportController {
 			return service.generate(
 					ReportType.getType(reportType),
 					ServiceType.getType(serviceType),
-					date);
+					date, 0);
+		} catch (Exception e) {
+			throw new ServerException(e);
+		}
+	}
+	
+	@GET
+	@Path("/service/{reportType}/{serviceType}/{date}/{interval}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Result serviceReport(@PathParam("reportType") String reportType,
+			@PathParam("serviceType") String serviceType, @PathParam("date") String date,
+			@PathParam("interval") int interval) {
+		try {
+			return service.generate(
+					ReportType.getType(reportType),
+					ServiceType.getType(serviceType),
+					date, interval);
 		} catch (Exception e) {
 			throw new ServerException(e);
 		}

@@ -6,6 +6,6 @@ import com.carcaret.trx.console.statistics.ServiceType;
 
 public interface ReportService {
 	
-	Result generate(ReportType reportType, ServiceType serviceType, String date);
+	Result generate(ReportType reportType, ServiceType serviceType, String date, int interval);
 	
 }

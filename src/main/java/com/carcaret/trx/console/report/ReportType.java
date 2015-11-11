@@ -1,7 +1,7 @@
 package com.carcaret.trx.console.report;
 
 public enum ReportType {
-	GENERAL("General");
+	GENERAL("General"), AVG("Medias"), SUCCESS_COUNTER("Total peticiones con éxito");
 	
 	private final String name;
 	

@@ -1,5 +1,6 @@
 package com.carcaret.trx.console.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Result {
@@ -26,6 +27,10 @@ public class Result {
 	public static class Series{
 		private String name;
 		private List<String> data;
+		
+		public Series(){
+			data = new ArrayList<String>();
+		}
 		
 		public String getName() {
 			return name;

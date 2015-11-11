@@ -10,11 +10,10 @@
 		<link type="text/css" href="<c:url value='/ui/jquery-ui.structure.min.css'/>" rel="stylesheet" />
 		<link type="text/css" href="<c:url value='/ui/jquery-ui.theme.min.css'/>" rel="stylesheet" />
 		<link type="text/css" href="<c:url value='/css/style.css'/>" rel="stylesheet" />
-		<link type="text/css" href="<c:url value='/css/chartist.min.css'/>" rel="stylesheet" />
 		
-		<script type="text/javascript" src="<c:url value='/js/jquery-1.11.3.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='/js/jquery-ui.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='/js/chartist.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/js/jquery/jquery-1.11.3.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/js/jquery/jquery-ui.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/js/chartist/chartist.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='/js/report.js'/>"></script>
 	</head>
 	
@@ -22,6 +21,8 @@
 		<h2>Hello World!</h2>
 		<select name="reportType" id="reportType">
 			<option selected="selected">General</option>
+			<option>Medias</option>
+			<option>Total peticiones con éxito</option>
 		</select>
 		<select name="serviceType" id="serviceType">
 			<option selected="selected" value="urn:safelayer:tws:services:ds">Firma</option>
@@ -29,6 +30,7 @@
 		</select>
 		Fecha: <input type="text" id="date"/>
 		<button id="consulta">Consulta</button>
+		Período: <input type="text" id="interval"/>
 		<div class="ct-chart ct-perfect-fourth" />
 	</body>
 </html>

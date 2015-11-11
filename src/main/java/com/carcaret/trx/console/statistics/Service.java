@@ -12,6 +12,8 @@ public interface Service {
 
   AggregateValues getSuccessServer();
 
+  int getSuccessCounter();
+  
   ErrorCount getErrorCount();
 
   LastRequest getLastRequest();
@@ -24,6 +26,7 @@ public interface Service {
     int min();
 
     int max();
+    
   }
 
   public interface ErrorCount {
