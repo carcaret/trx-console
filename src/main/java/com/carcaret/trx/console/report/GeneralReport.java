@@ -11,10 +11,10 @@ final class GeneralReport implements Visitor {
 
 	public GeneralReport() {
 		Result.Series client = new Result.Series();
-		client.setName("Cliente");
+		client.setLabel("Cliente");
 
 		Result.Series server = new Result.Series();
-		server.setName("Servidor");
+		server.setLabel("Servidor");
 
 		result = new Result();
 		result.setLabels(Arrays.asList("Avg", "Min", "Max"));
@@ -24,14 +24,14 @@ final class GeneralReport implements Visitor {
 	@Override
 	public void visit(Service service) {
 		for (Result.Series series : result.getSeries()) {
-			if (series.getName().equals("Cliente")) {
+			if (series.getLabel().equals("Cliente")) {
 				series.getData().addAll(
 						Arrays.asList(
 								Integer.toString(service.getSuccessClient().avg()),
 								Integer.toString(service.getSuccessClient().min()),
 								Integer.toString(service.getSuccessClient().max())));
 			}
-			if (series.getName().equals("Servidor")) {
+			if (series.getLabel().equals("Servidor")) {
 				series.getData().addAll(
 						Arrays.asList(
 								Integer.toString(service.getSuccessServer().avg()),

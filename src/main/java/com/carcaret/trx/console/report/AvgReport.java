@@ -11,10 +11,10 @@ public class AvgReport implements Visitor{
 	
 	public AvgReport(String... dates) {
 		Result.Series client = new Result.Series();
-		client.setName("Cliente");
+		client.setLabel("Cliente");
 		
 		Result.Series server = new Result.Series();
-		server.setName("Servidor");
+		server.setLabel("Servidor");
 		
 		result = new Result();
 		result.setLabels(Arrays.asList(dates));
@@ -24,10 +24,10 @@ public class AvgReport implements Visitor{
 	@Override
 	public void visit(Service service) {
 		for(Result.Series series : result.getSeries()){
-			if(series.getName().equals("Cliente")){
+			if(series.getLabel().equals("Cliente")){
 				series.getData().add(Integer.toString(service.getSuccessClient().avg()));
 			}
-			if(series.getName().equals("Servidor")){
+			if(series.getLabel().equals("Servidor")){
 				series.getData().add(Integer.toString(service.getSuccessServer().avg()));
 			}
 		}

@@ -11,7 +11,7 @@ public class SuccessCounterReport implements Visitor {
 
 	public SuccessCounterReport(String... dates) {
 		Result.Series series = new Result.Series();
-		series.setName("Requests");
+		series.setLabel("Requests");
 
 		result = new Result();
 		result.setLabels(Arrays.asList(dates));

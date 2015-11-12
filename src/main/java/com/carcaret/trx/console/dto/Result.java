@@ -25,19 +25,19 @@ public class Result {
 	}
 
 	public static class Series{
-		private String name;
+		private String label;
 		private List<String> data;
 		
 		public Series(){
 			data = new ArrayList<String>();
 		}
 		
-		public String getName() {
-			return name;
+		public String getLabel() {
+			return label;
 		}
 		
-		public void setName(String name) {
-			this.name = name;
+		public void setLabel(String name) {
+			this.label = name;
 		}
 		
 		public List<String> getData() {

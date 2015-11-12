@@ -19,18 +19,52 @@ $(document).ready(function() {
 		}
 		$.get(url)
 			.done(function(data) {
-				var charData = {
-					labels : data.labels,
-					series : data.series
-				};
-				var options = {
-					width : 500,
-					height : 400
-				};
-				new Chartist.Bar('.ct-chart', charData, options);
+				drawChart(data);
 			})
 			.fail(function(xhr, status, error) {
 				alert(xhr.responseText);
 			});
 	});
 });
+
+function drawChart(data) {
+	$("#canvas-wrapper").html("").html('<canvas id="myChart" width="400" height="400"/>');
+	var ctx = $('#myChart').get(0).getContext('2d');
+	
+	var colors = getRgbaColors(data.series.length);
+	var dataset = [];
+	
+	for(var i=0; i<data.series.length; i++){
+		dataset.push({
+			label: data.series[i].label,
+			fillColor : colors[i],
+			strokeColor : colors[i],
+			highlightFill : colors[i],
+			highlightStroke : colors[i],
+			data: data.series[i].data
+		});
+	}
+		
+	var chartData = {
+		labels : data.labels,
+		datasets : dataset
+	};
+	var myNewChart = new Chart(ctx).Bar(chartData);
+}
+
+function getRgbaColors(quantity){
+	var firstColor = Math.floor(255 / (quantity+1));
+	var colors = [];
+	for(var i=1; i<=quantity; i++){
+		colors.push('rgba('+i*firstColor+',' +i*firstColor+','+i*firstColor+',1)');
+	}
+	return colors;
+}
+
+
+
+
+
+
+
+
