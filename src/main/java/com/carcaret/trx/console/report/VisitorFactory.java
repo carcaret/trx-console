@@ -12,9 +12,9 @@ public final class VisitorFactory {
 		case GENERAL:
 			return new GeneralReport();
 		case AVG:
-			return new AvgReport(Date.getDateInterval(date, interval));
+			return new AvgReport(Date.getChartDateInterval(date, interval));
 		case SUCCESS_COUNTER:
-			return new SuccessCounterReport(Date.getDateInterval(date, interval));
+			return new SuccessCounterReport(Date.getChartDateInterval(date, interval));
 		default:
 			throw new IllegalArgumentException(String.format("ReportType '%s' not supported", type));
 		}

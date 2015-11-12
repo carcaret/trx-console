@@ -5,3 +5,28 @@ body {
 .ui-selectmenu-button {
 	width: 150px !important;
 }
+
+.chart-span{
+	float:left;
+	margin-top:15px;
+	margin-bottom:15px;
+	margin-left:15px;
+	margin-right:25px;
+}
+
+.chart-legend{
+    font-size: 14px;
+    margin: 15px;
+}
+
+.chart-legend ul
+{
+    list-style-type: none;
+}
+
+.chart-legend li span{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}

@@ -18,7 +18,7 @@ public class FileServiceImpl implements FileService {
 			return getStatistics(date);
 		}
 		List<TxStatistics> statistics = new ArrayList<TxStatistics>();
-		for(String auxDate : Date.getDateInterval(date, interval)){
+		for(String auxDate : Date.getFileDateInterval(date, interval)){
 			statistics.addAll(getStatistics(auxDate));
 		}
 		return statistics;
