@@ -12,7 +12,7 @@ public class RestServer {
 		context.setContextPath("/");
 		context.setParentLoaderPriority(true);
 
-		Server server = new Server(8080);
+		Server server = new Server(9090);
 		server.setHandler(context);
 		server.start();
 		server.join();

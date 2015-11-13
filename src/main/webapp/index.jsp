@@ -19,19 +19,29 @@
 	
 	<body>
 		<h2>Hello World!</h2>
-		<div>
-			<select name="reportType" id="reportType">
-				<option selected="selected">General</option>
-				<option>Medias</option>
-				<option>Total peticiones con éxito</option>
-			</select>
-			<select name="serviceType" id="serviceType">
-				<option selected="selected" value="urn:safelayer:tws:services:ds">Firma</option>
-				<option value="urn:safelayer:tws:services:dsv">Verificacion</option>
-			</select>
-			Fecha: <input type="text" id="date"/>
-			<button id="consulta">Consulta</button>
-			Período: <input type="text" id="interval"/>
+		<div class="menu">
+			<span class="menu-element">
+				<select name="reportType" id="reportType">
+					<option selected="selected">General</option>
+					<option>Medias</option>
+					<option>Total peticiones con éxito</option>
+				</select>
+			</span>
+			<span class="menu-element">
+				<select name="serviceType" id="serviceType">
+					<option selected="selected" value="urn:safelayer:tws:services:ds">Firma</option>
+					<option value="urn:safelayer:tws:services:dsv">Verificacion</option>
+				</select>
+			</span>
+			<label class="menu-element">
+				Fecha: 
+				<input type="text" id="date"/>
+			</label>
+			<label class="menu-element">
+				Período: 
+				<input type="text" id="interval"/>
+			</label>
+			<button class="menu-element" id="consulta">Consulta</button>
 		</div>
 		<div id="canvas-wrapper"/>
 	</body>
